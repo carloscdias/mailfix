@@ -2,9 +2,41 @@
 import sys
 import re
 
+qwerty_layout = {
+	'a': 'qwsxz',
+	'b': 'vghn',
+	'c': 'xdfv',
+	'd': 'serfcx',
+	'e': 'wsdrf',
+	'f': 'dcvgtre',
+	'g': 'fvbhytr',
+	'h': 'gbnjuyt',
+	'i': 'ujklo',
+	'j': 'hnmkiuy',
+	'k': 'jm,loiu',
+	'l': 'k,.çpoi',
+	'm': 'njk,',
+	'n': 'bhjm',
+	'o': 'iklçp',
+	'p': 'olç',
+	'q': 'asw',
+	'r': 'edfgt',
+	's': 'azxdewq',
+	't': 'rfghy',
+	'u': 'yhjki',
+	'v': 'cfgb',
+	'w': 'qasde',
+	'x': 'zsdc',
+	'y': 'tghju',
+	'z': 'asx'
+}
+
 def replace_cost( char1, char2 ):
 	if char1 == char2:
 		return 0
+
+	if char1 in qwerty_layout and char2 in qwerty_layout[ char1 ]:
+		return 1
 
 	return 2
 
